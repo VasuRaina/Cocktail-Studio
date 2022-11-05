@@ -16,7 +16,7 @@ const cocktailSchema = mongoose.Schema(
         required: true,
       },
       ingredients: {
-        type: String,
+        type: Array,
         required: true,
       },
       instructions: {
