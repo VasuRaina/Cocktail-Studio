@@ -7,7 +7,7 @@ const cocktailSchema = new Schema(
 
     name: {
       type: String,
-      required: false,
+      required: true,
     },
     image: {
       type: String,
