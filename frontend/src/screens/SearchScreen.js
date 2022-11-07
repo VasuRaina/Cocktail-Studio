@@ -3,6 +3,7 @@ import DrinkCardList from '../components/DrinkCardList';
 import { useState } from 'react';
 import { Box, Typography, Autocomplete, TextField } from '@mui/material';
 import { ingredientsList } from '../mockData';
+import SearchBar from '../components/SearchBar'
 
 export default function SearchScreen() {
 
@@ -12,6 +13,14 @@ export default function SearchScreen() {
     const [ingredient4, setIngredient4] = useState('');
 
     return (
+        <div>
+          <SearchBar/>
+        </div>
+    );
+}
+
+/*
+return (
         <div>
             <h2>Search Screen</h2>
             <Box
@@ -30,7 +39,7 @@ export default function SearchScreen() {
         <Box>
           <Typography variant='h4'>Cocktail App</Typography>
         </Box>
-        {/* ---->  Box containing dropdowns  <--------- */}
+        {---->  Box containing dropdowns  <---------}
         <Box marginTop={5} display='flex'>
           <Box width='25%' marginRight={2}>
             <Autocomplete
@@ -85,7 +94,7 @@ export default function SearchScreen() {
             />
           </Box>
         </Box>
-        {/* ---->  Display Selected Ingredients <------ */}
+        {---->  Display Selected Ingredients <------}
         <Box marginTop={5}>
           {ingredient1 && <Typography>{ingredient1}</Typography>}
           {ingredient2 && <Typography>{ingredient2}</Typography>}
@@ -97,4 +106,4 @@ export default function SearchScreen() {
             <DrinkCardList/>
         </div>
     );
-}
+*/
