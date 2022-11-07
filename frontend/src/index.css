@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.Pname{
+  background-color: #e20b0b;
+}
+.CockStudio{
+   width: auto;
+   margin-left: 0%;
+
+}
+.ListItem {
+   text-decoration: none;
+
+   text-transform: uppercase;
+   align-items: center;
+   padding: 10px 0 10px 30px;
+   font-family: "Poppins", sans-serif;
+   font-size: 13px;
+   font-weight: 500;
+   display: flex;
+ }
+ .NavHome{
+     text-decoration: 'none';
+     color: white ;
+ }
+ 
+ .footer{
+     text-align: center;
+     background-color: #e20b0b;
+     color: white;
+ }
