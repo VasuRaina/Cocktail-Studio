@@ -27,8 +27,8 @@ const fetchName = MongoClient.connect(url, function (err, db) {
             allIngredients = allIngredients + ", " + result[0].ingredients[i].name ;
             allMeasurements = allMeasurements + ", " + result[0].ingredients[i].measure ;
         }
-        console.log(allIngredients);
-        console.log(allMeasurements);
+        // console.log(allIngredients);
+        // console.log(allMeasurements);
         db.close();
     });
 });
@@ -38,10 +38,8 @@ const drinkCards = MongoClient.connect(url, function(err, db) {
     var dbo = db.db("CSC648");
     dbo.collection("drinks").find({}).toArray(function(err, result) {
       if (err) throw err;
-      for(let i =0 ; i < result.length; i++){
-
-      }
-      console.log(result[1].name);
+      
+      console.log(result[0]);
       db.close();
     });
   });
