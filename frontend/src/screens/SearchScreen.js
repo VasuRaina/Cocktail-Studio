@@ -1,102 +1,67 @@
-import React from 'react'
+/* eslint-disable jsx-a11y/alt-text */
+import React, { useState } from 'react'
+import data from '../mockData';
+import { Stack } from '@mui/system';
 
-import { useState } from 'react';
-import { Box, Typography, Autocomplete, TextField } from '@mui/material';
-import { ingredientsList } from '../mockData';
-import DrinkCard from '../components/DrinkCard';
 
-export default function SearchScreen() {
 
-    const [ingredient1, setIngredient1] = useState('');
-    const [ingredient2, setIngredient2] = useState('');
-    const [ingredient3, setIngredient3] = useState('');
-    const [ingredient4, setIngredient4] = useState('');
+ const SearchScreen = () => {
 
-    return (
-        <div className='Screen'>
-          
-            <Box
-      display='flex'
-      justifyContent='center'
-      bgcolor='#edeef1'
-      minHeight='100vh'
-    >
-      <Box
-        display='flex'
-        flexDirection='column'
-        width={1200}
-        padding={3}
-        bgcolor='white'
-      >
-        <Box>
-          <Typography variant='h4'>Cocktail App</Typography>
-        </Box>
-        {/* ---->  Box containing dropdowns  <--------- */}
-        <Box marginTop={5} display='flex'>
-          <Box width='25%' marginRight={2}>
-            <Autocomplete
-              fullWidth
-              options={ingredientsList}
-              size='small'
-              renderInput={(params) => (
-                <TextField {...params} label='Choose Ingredient' />
-              )}
-              onChange={(_event, newValue) => {
-                setIngredient1(newValue.label);
-              }}
-            />
-          </Box>
-          <Box width='25%' marginRight={2}>
-            <Autocomplete
-              fullWidth
-              options={ingredientsList}
-              size='small'
-              renderInput={(params) => (
-                <TextField {...params} label='Choose Alcohol' />
-              )}
-              onChange={(_event, newValue) => {
-                setIngredient2(newValue.label);
-                <DrinkCard/>
-              }}
-            />
-          </Box>
-          <Box width='25%' marginRight={2}>
-            <Autocomplete
-              fullWidth
-              options={ingredientsList}
-              size='small'
-              renderInput={(params) => (
-                <TextField {...params} label='Choose Recipe' />
-              )}
-              onChange={(_event, newValue) => {
-                setIngredient3(newValue.label);
-              }}
-            />
-          </Box>
-          <Box width='25%' marginRight={2}>
-            <Autocomplete
-              fullWidth
-              options={ingredientsList}
-              size='small'
-              renderInput={(params) => (
-                <TextField {...params} label='Choose Glassware' />
-              )}
-              onChange={(_event, newValue) => {
-                setIngredient4(newValue.label);
-              }}
-            />
-          </Box>
-        </Box>
-        {/* ---->  Display Selected Ingredients <------ */}
-        <Box marginTop={5}>
-          {ingredient1 && <Typography>{ingredient1}</Typography>}
-          {ingredient2 && <Typography>{ingredient2}</Typography>}
-          {ingredient3 && <Typography>{ingredient3}</Typography>}
-          {ingredient4 && <Typography>{ingredient4}</Typography>}
-        </Box>
-      </Box>
-    </Box>
-           
-        </div>
-    );
+          const [filter, setFilter] = useState('');
+                const searchText =(event)=> {
+                    setFilter(event.target.value);
+        }
+            let dataSearch = data.cardData.filter(item => {
+                return Object.keys(item).some(key =>
+                       item[key].toString().toLowerCase().includes(filter.toString().toLocaleLowerCase())
+                          
+        )});
+ return (
+    <div>
+      <section className='py-4 container'>
+          <div className = "row justify-content-center">
+
+
+            <div className='col-12 mb-5'>
+              <div className='mb-3 col-4 mx-auto text-center'>
+                  <label className='form-label h4'>Search</label>
+                  <input
+                  type = 'text'
+                  className='from-control'
+                    value={filter}
+                    onChange = {searchText.bind(this)}
+                  
+                  />   
+
+              </div>
+
+            </div>
+
+
+
+             { dataSearch.map((item, index) => {
+                return (
+                  <Stack direction="column" spacing={2}>
+                   
+                  <div className='col-11 col md-6 col-lg-3 mx-0 mb-4'>
+                  <div cclassName='card p-0 overflow-hidden h-100 shadow'>
+                        <h5 className='card-title'> {item.label} </h5>
+                    <div className='card-body'> 
+                            <img src={item.img} className= 'card-img-top'/>
+                            <p className='card-text'> {item.description}</p>
+                    </div>
+                  </div>
+                  </div>
+                
+                  </Stack>
+                )
+             })}
+
+          </div>
+      </section>
+
+    </div>
+  )
 }
+export default SearchScreen;
+

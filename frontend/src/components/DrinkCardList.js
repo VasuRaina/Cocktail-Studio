@@ -1,29 +1,30 @@
-import {useState} from 'react'
-import Container from '@mui/material/Container';
-import DrinkCard from './DrinkCard'
+import React from 'react';
+
+import DrinkCard from './DrinkCard';
+import { Grid  } from '@mui/material';
 
 function DrinkCardList() {
-    const [drinks] = useState([
-        {name: 'Vodka'},
-        {name: 'Rum'},
-        {name: 'Gin'},
-        {name: 'Tequila'}
-    ])
+    
 
     return (
         <div className="drink-card-list">
-            {drinks.map((drink) => (
-                <div className="drink-card" key={drink.name} marginBottom ="20px">
-               <row>
-                    <Container >
+            {/* {drinks.map((drink) => ( */}
+                <div marginBottom ="20px">
+         <Grid>
+                 {/* {drink.name} */}
+                         <DrinkCard/>
+                         </Grid>
+                  
+                  
                         
-                        {drink.name}
-                        <DrinkCard/>
                       
-                    </Container>
-                    </row>  
+                      
+          
+                 
+
+                   
                 </div>
-            ))}
+            
         </div>
     );
 }
