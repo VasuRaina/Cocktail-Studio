@@ -36,7 +36,7 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { Avatar } from '@mui/material';
 import { Typography } from '@mui/material';
-import DrinkCard from '../components/DrinkCard';
+import PostCard from '../components/PostCard';
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -77,30 +77,30 @@ export default function ProfileScreen() {
 
 
     <Box sx={{ flexGrow: 1 , margiinTop:5, marginLeft:10, marginRight:10}}>
-      <Grid container spacing={2}  sx={{}}>
+      <Grid container spacing={2}  >
         <Grid item xs={4}>
-          <Item><DrinkCard/></Item>
+          <Item><PostCard/></Item>
         </Grid>
         <Grid item xs={4}>
-          <Item><DrinkCard/></Item>
+          <Item><PostCard/></Item>
         </Grid>
         <Grid item xs={4}>
-          <Item><DrinkCard/></Item>
+          <Item><PostCard/></Item>
         </Grid>
         <Grid item xs={4}>
-          <Item><DrinkCard/></Item>
+          <Item><PostCard/></Item>
         </Grid>
         <Grid item xs={4}>
-          <Item><DrinkCard/></Item>
+          <Item><PostCard/></Item>
         </Grid>
         <Grid item xs={4}>
-          <Item><DrinkCard/></Item>
+          <Item><PostCard/></Item>
         </Grid>
         <Grid item xs={4}>
-          <Item><DrinkCard/></Item>
+          <Item><PostCard/></Item>
         </Grid>
         <Grid item xs={4}>
-          <Item><DrinkCard/></Item>
+          <Item><PostCard/></Item>
           </Grid>
       </Grid>
     </Box>

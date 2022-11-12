@@ -10,6 +10,7 @@ import LogInScreen from './screens/LoginScreen';
 import SearchScreen from './screens/SearchScreen';
 import SignupScreen from './screens/SignUpScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import FeedScreen from './screens/FeedScreen'
 import { BrowserRouter } from 'react-router-dom';
 
 
@@ -27,7 +28,7 @@ function App() {
      <Route path = 'Search' element={<SearchScreen/>}/>
      <Route path = 'LogIn' element={<LogInScreen/>}/>
      <Route path = 'Profile' element={<ProfileScreen/>}/>
- 
+     <Route path = 'Feed' element={<FeedScreen/>}/> 
      <Route path = '/SignUpScreen' element={<SignupScreen/>}/>
      <Route path = '/SignUpScreen' element={<SignupScreen/>}/>
       

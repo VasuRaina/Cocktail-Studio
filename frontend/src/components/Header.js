@@ -65,7 +65,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 import LocalBarTwoToneIcon from '@mui/icons-material/LocalBarTwoTone';
 
-const pages = [ 'Post','Search', 'LogIn', 'Profile'];
+const pages = [ 'Post','Search', 'LogIn', 'Profile', 'Feed'];
 const settings = ['Profile', 'Dashboard', 'Logout'];
 
 function Header() {
