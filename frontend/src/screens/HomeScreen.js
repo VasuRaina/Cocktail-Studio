@@ -10,12 +10,19 @@
 // export default HomeScreen;
 
 import React from 'react'
-import DrinkCardList from '../components/DrinkCardList';
+import PostCard from '../components/PostCard';
+import { Box } from '@mui/material';
 
 function HomeScreen() {
     return (
         <div className ='Screen'>
-            <DrinkCardList/>
+             <Box bgcolor='' flex={4} p={2} >
+        <PostCard />
+        <PostCard />
+        <PostCard />
+        <PostCard />
+        <PostCard />
+    </Box>
         </div>
     );
 }

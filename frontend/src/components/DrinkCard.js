@@ -11,9 +11,12 @@ import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 
-import FavoriteIcon from '@mui/icons-material/Favorite';
+// import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Favorite, FavoriteBorder } from '@mui/icons-material';
+import { Checkbox } from '@mui/material';
+
 //import data from '../mockData';
 import data from '../mockData';
 
@@ -60,7 +63,7 @@ export default function RecipeReviewCard() {
               </CardContent>
               <CardActions disableSpacing>
                   <IconButton aria-label="add to favorites">
-                  <FavoriteIcon />
+                  <Checkbox  icon={<FavoriteBorder />} checkedIcon={<Favorite sx={{ color: 'red'}}/>} />
                   </IconButton>
           <IconButton aria-label="share">
             <ShareIcon />
