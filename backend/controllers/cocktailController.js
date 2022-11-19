@@ -6,12 +6,21 @@ import  Cocktail  from '../models/cocktailModel.js';
 // @access Public
 const getCocktail = asyncHandler(async (req, res) => {
   const cocktail = await Cocktail.find({});
-  if (cocktail) {
-    res.json(cocktail);
-  } else {
-    res.status(404);
-    throw new Error('Cocktail not found');
-  }
+  console.log("This works");
+  res.status(200).json(cocktail);
+});
+
+const postCocktail = asyncHandler(async (req , res)=> {
+const {name} =req.body
+try{
+  const cocktail = await Cocktail.create({name})
+  res.status(200).json(cocktail)
+
+}
+catch(error){
+  res.status(400).json({error : error.message})
+}
+
 });
 
 // @description : fetch single Cocktail
@@ -40,4 +49,4 @@ const getCocktailByGlassware = asyncHandler(async (req, res) => {
   }
 });
 
-export { getCocktail, getCocktailByName, getCocktailByGlassware };
+export { getCocktail, getCocktailByName, getCocktailByGlassware, postCocktail };
