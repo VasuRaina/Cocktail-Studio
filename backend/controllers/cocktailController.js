@@ -5,7 +5,7 @@ import  Cocktail  from '../models/cocktailModel.js';
 // @route GET /api/Cocktais
 // @access Public
 const getCocktail = asyncHandler(async (req, res) => {
-  const cocktail = await Cocktail.find({});
+  const cocktail = await Cocktail.find({name: "'57 Chevy with a White License Plate"});
   console.log("This works");
   res.status(200).json(cocktail);
 });
@@ -27,7 +27,8 @@ catch(error){
 // @route GET /api/Cocktais/:id
 // @access Public
 const getCocktailByName = asyncHandler(async (req, res) => {
-  const cocktail = await Cocktail.find(req.params.name);
+  
+  const cocktail = await Cocktail.find(req.body);
   if (cocktail) {
     res.json(cocktail);
   } else {
@@ -40,7 +41,7 @@ const getCocktailByName = asyncHandler(async (req, res) => {
 // @route GET /api/Cocktais/:glassware
 // @access Public
 const getCocktailByGlassware = asyncHandler(async (req, res) => {
-  const cocktail = await Cocktail.find(req.params.glassware);
+  const cocktail = await Cocktail.find(req.body);
   if (cocktail) {
     res.json(cocktail);
   } else {

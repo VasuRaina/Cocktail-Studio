@@ -2,9 +2,9 @@ import express from 'express';
 import Cocktail from '../models/cocktailModel.js';
 
 const router = express.Router();
-import { getCocktail, getCocktailByName, postCocktail } from '../controllers/cocktailController.js';
+import { getCocktail, getCocktailByGlassware, getCocktailByName, postCocktail } from '../controllers/cocktailController.js';
 
-router.get('/', getCocktailByName);
+router.get('/', getCocktailByGlassware);
 
 router.post('/', postCocktail);
 // router.get('/', (req, res) => {
