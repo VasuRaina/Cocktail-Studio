@@ -26,6 +26,8 @@ catch(error){
 // @description : fetch single Cocktail
 // @route GET /api/Cocktais/:id
 // @access Public
+
+
 const getCocktailByName = asyncHandler(async (req, res) => {
   
   const cocktail = await Cocktail.find(req.body);

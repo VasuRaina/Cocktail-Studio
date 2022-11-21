@@ -9,7 +9,7 @@ const postSchema = mongoose.Schema(
       },
       image: {
         type: String,
-        required: true,
+        required: false,
       },
       description: {
         type: String,
@@ -17,7 +17,7 @@ const postSchema = mongoose.Schema(
       },
       dateCreated: {
         type: Array,
-        required: true,
+        required: false,
       },
   
       

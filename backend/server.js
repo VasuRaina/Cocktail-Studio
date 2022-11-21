@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cocktailRoutes from './routes/cocktailRoutes.js';
-
+import postRoutes from './routes/postRoutes.js';
 dotenv.config();
 
 const app = express();
@@ -15,6 +15,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/cocktails', cocktailRoutes);
+app.use('/post', postRoutes);
 
 mongoose
   .connect(process.env.MONGO_URI)
