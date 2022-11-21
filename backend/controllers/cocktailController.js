@@ -1,11 +1,11 @@
 import asyncHandler from 'express-async-handler';
 import  Cocktail  from '../models/cocktailModel.js';
-
+let cocktailInput = "";
 // @description : fetch all Cocktais
 // @route GET /api/Cocktais
 // @access Public
 const getCocktail = asyncHandler(async (req, res) => {
-  const cocktail = await Cocktail.find({name: "'57 Chevy with a White License Plate"});
+  const cocktail = await Cocktail.find({name: cocktailInput});
   console.log("This works");
   res.status(200).json(cocktail);
 });
