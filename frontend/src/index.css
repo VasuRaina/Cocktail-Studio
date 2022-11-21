@@ -41,3 +41,33 @@ code {
      background-color: #e20b0b;
      color: white;
  }
+
+ #drinkName {
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: xx-large;
+ }
+
+ #drinkCard {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ #postCard {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ .recipeElement {
+  text-align: left;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  
+ }
+
+ .recipeSection {
+  background-color: lightgray;
+ }

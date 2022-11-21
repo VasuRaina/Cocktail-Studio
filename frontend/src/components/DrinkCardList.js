@@ -4,12 +4,17 @@ import DrinkCard from './DrinkCard'
 
 
 function DrinkCardList() {
-    const [drinks, setDrinks] = useState([
-        {name: 'Vodka'},
-        {name: 'Rum'},
-        {name: 'Gin'},
-        {name: 'Tequila'}
+    const [drinks, setDrink] = useState([
+        {
+            name: '', 
+            imgURL: '', 
+            glassware: '', 
+            ingredients: [], 
+            instructions: '', 
+            category: ''
+        }
     ])
+
 
     return (
         <div className="drink-card-list">
@@ -19,10 +24,11 @@ function DrinkCardList() {
                         {drink.name}
                         <DrinkCard/>
                     </Container>
-
                 </div>
             ))}
         </div>
+
+
     );
 }
 
