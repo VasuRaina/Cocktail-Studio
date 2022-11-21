@@ -4,15 +4,14 @@ import Cocktail from '../models/cocktailModel.js';
 const router = express.Router();
 import { getCocktail, getCocktailByGlassware, getCocktailByName, postCocktail } from '../controllers/cocktailController.js';
 
-router.get('/', getCocktailByGlassware);
+router.get('/', getCocktail);
 
 router.post('/', postCocktail);
 // router.get('/', (req, res) => {
 //   res.json({ mssg: 'GET ALL COCKTAILS' });
 // });
 
-router.get('/:id', (req, res) => {
-  res.json({ mssg: 'GET A SINGLE COCKTAILS' });
-});
+router.get('/:name', getCocktailByName);
+router.get('/:glassware', getCocktailByGlassware);
 
 export default router;
