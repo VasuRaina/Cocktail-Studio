@@ -1,6 +1,14 @@
 import mongoose from 'mongoose';
 
 const postSchema = mongoose.Schema({
+  userName: {
+    type: String,
+    required: true,
+  },
+  cocktailName: {
+    type: String,
+    required: true,
+  },
   title: {
     type: String,
     required: true,
@@ -13,10 +21,8 @@ const postSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  userName: {
-    type: String,
-    required: true,
-  },
+  
+  
   dateCreated: {
     type: Array,
     required: false,
