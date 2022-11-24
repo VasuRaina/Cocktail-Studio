@@ -62,7 +62,8 @@ useEffect(()=> getRepo(), [])
 <>
 { repo.map((item, index) => (
              <div className='viewCArd' >
-            <Card key ={index} id="drinkCard" sx={{width: 300 }}>
+               
+            <Card key ={index} id="drinkCard" sx={{width: 300, height: 340}}>
               
               <CardMedia
                   component="img"
@@ -71,7 +72,7 @@ useEffect(()=> getRepo(), [])
                   alt="Cocktail Photo"
               />
               <CardContent>
-                  <Typography gutterBottom variant="h6" component="div">
+                  <Typography gutterBottom variant="h6" component="div" sx={{fontSize:14}}>
                       {item.name}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
@@ -96,10 +97,8 @@ useEffect(()=> getRepo(), [])
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-           
-          
-            <Typography variant="body2" color="text.secondary">
-            {item.ingredients}
+            <Typography key = {index} variant="body2" color="text.secondary">
+            {item.description}
         </Typography>  
           </CardContent>
               </Collapse>
