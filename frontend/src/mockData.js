@@ -8,27 +8,25 @@
 //     { label: 'Orange Juice' },
 //     { label: 'Gin' },
 //   ];
-import img1 from './img/vodka.jpeg';
-import img2 from './img/Rum.jpeg';
-import img3 from './img/taquila.jpeg';
+
 
 const mockData = {
   cardData: [
     {id:1, 
       label:'Vodka',
-      img:img1,
+      img:'',
       description:'Add 2 cups of vodka',
 
     },
     {id:2, 
       label:'Tequila',
-      img:img2,
+      img:'',
       description:'Add 2 cups of Taquila',
 
     },
     {id:3, 
       label:'Rum',
-      img:img3,
+      img:'',
       description:'Add 2 cups of rum',
 
     },
