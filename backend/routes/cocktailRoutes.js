@@ -10,7 +10,7 @@ router.post('/', postCocktail);
 // router.get('/', (req, res) => {
 //   res.json({ mssg: 'GET ALL COCKTAILS' });
 // });
-router.get('/name', getCocktailByName);
+router.post('/name', getCocktailByName);
 
 router.get('/glassware', getCocktailByGlassware);
 

@@ -16,6 +16,7 @@ const postCocktail = asyncHandler(async (req, res) => {
   const { name } = req.body;
   try {
     const cocktail = await Cocktail.create({ name });
+    res.header("Access-Control-Allow-Origin", "*");
     res.status(200).json(cocktail);
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -27,7 +28,8 @@ const postCocktail = asyncHandler(async (req, res) => {
 // @access Public
 
 const getCocktailByName = asyncHandler(async (req, res) => {
-  const cocktail = await Cocktail.find({ name: cocktailInput });
+  console.log("postRequest")
+  const cocktail = await Cocktail.find(req.body);
   if (cocktail) {
     res.json(cocktail);
   } else {
