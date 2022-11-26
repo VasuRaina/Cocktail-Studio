@@ -36,16 +36,16 @@ const ExpandMore = styled((props) => {
 
 export default function RecipeReviewCard() {
           const [expanded, setExpanded] = useState(false);
-
-            const handleExpandClick = () => {
-            setExpanded(!expanded);
+        
+            function handleExpandClick (id) {
+              setExpanded(expanded => ({...expanded, [id]: !expanded[id]}));
   };
 
 const [repo, setRepo] = useState([]);
   const getRepo = () => {
 axios.get('http://localhost:4000/cocktails/')
       .then(res => {
-            console.log("Hi")
+          
             console.log(res)
             // setPosts(res.data)
             setRepo(res.data)
@@ -96,11 +96,11 @@ useEffect(()=> getRepo(), [])
           </ExpandMore>
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-            <Typography key = {index} variant="body2" color="text.secondary">
+      
+            <Typography  variant="body2" color="text.secondary">
             {item.description}
         </Typography>  
-          </CardContent>
+         
               </Collapse>
           </Card>
           </div>
